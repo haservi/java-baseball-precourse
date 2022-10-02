@@ -12,9 +12,10 @@ public class BallList {
         this.ballList = new ArrayList<>();
     }
 
-    public void addBall(Set<Integer> ballSet) {
-        for (Integer number : ballSet) {
-            ballList.add(new Ball(number));
+    public void addBall(List<Integer> ballList) {
+        for (Integer number : ballList) {
+            this.ballList.add(new Ball(number));
         }
     }
+
 }

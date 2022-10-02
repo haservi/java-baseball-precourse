@@ -2,6 +2,7 @@ package baseball.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -18,6 +19,6 @@ public class ComputerBallList extends BallList {
         while (randomBall.size() < TOTAL_ROUND) {
             randomBall.add(Randoms.pickNumberInRange(MIN_NUMBER, MAX_NUMBER));
         }
-        addBall(randomBall);
+        addBall(new ArrayList<>(randomBall));
     }
 }
