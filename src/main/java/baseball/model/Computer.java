@@ -17,7 +17,7 @@ public class Computer extends BallList {
         while (randomBall.size() < TOTAL_ROUND) {
             randomBall.add(Randoms.pickNumberInRange(MIN_NUMBER, MAX_NUMBER));
         }
-//        System.out.println(Arrays.toString(randomBall.toArray()));
+        System.out.println(Arrays.toString(randomBall.toArray()));
         return new ArrayList<>(randomBall);
     }
 

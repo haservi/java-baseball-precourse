@@ -1,27 +1,20 @@
 package baseball.controller;
 
 import baseball.common.ConstMessage;
-import baseball.model.BallList;
+import baseball.enums.GameStatus;
 import baseball.model.Computer;
 import baseball.model.User;
 import camp.nextstep.edu.missionutils.Console;
 
-import static baseball.common.ConstValue.GAME_START;
-
 public class GameController {
 
     public GameController() {
+
     }
 
     public void playing() {
-        int gameStatus = 1;
-        while (GAME_START == gameStatus) {
-            start();
-            // TODO: 사용자가 종료 여부 판단
-            gameStatus = 2;
-        }
-        System.out.println("game end");
-
+        start();
+        retry();
     }
 
     private void start() {
@@ -36,5 +29,17 @@ public class GameController {
             System.out.println(result);
             isClear = user.userResult.isClear();
         }
+    }
+
+    private void retry() {
+        System.out.println(ConstMessage.COMPLETE);
+        System.out.println(ConstMessage.CONTINUE);
+        if (GameStatus.RESTART.equals(getContinueStatus())) {
+            playing();
+        }
+    }
+
+    private GameStatus getContinueStatus() {
+        return GameStatus.getCode(Console.readLine());
     }
 }
