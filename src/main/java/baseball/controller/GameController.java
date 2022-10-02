@@ -26,14 +26,15 @@ public class GameController {
 
     private void start() {
 
-        BallList computerBallList = new Computer();
+        Computer computer = new Computer();
         boolean isClear = false;
 
         while (!isClear) {
             System.out.print(ConstMessage.INPUT_NUMBER);
-            BallList userBallList = new User(Console.readLine());
-            // TODO: 컴퓨터와 사용자 정답 비교
-
+            User user = new User(Console.readLine());
+            String result = user.score(computer.ballList);
+            System.out.println(result);
+            isClear = user.userResult.isClear();
         }
     }
 }

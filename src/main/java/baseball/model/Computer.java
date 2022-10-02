@@ -2,10 +2,7 @@ package baseball.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static baseball.common.ConstValue.*;
 
@@ -20,6 +17,7 @@ public class Computer extends BallList {
         while (randomBall.size() < TOTAL_ROUND) {
             randomBall.add(Randoms.pickNumberInRange(MIN_NUMBER, MAX_NUMBER));
         }
+//        System.out.println(Arrays.toString(randomBall.toArray()));
         return new ArrayList<>(randomBall);
     }
 

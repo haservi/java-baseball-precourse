@@ -10,8 +10,11 @@ import static baseball.common.ConstValue.INPUT_LENGTH;
 
 public class User extends BallList {
 
+    public UserResult userResult;
+
     public User(String numbers) {
         addBall(convertToListInteger(numbers));
+        this.userResult = new UserResult();
     }
 
     private List<Integer> convertToListInteger(String numbers) {
@@ -39,5 +42,12 @@ public class User extends BallList {
         if (integerSet.size() != 3) {
             throw new IllegalArgumentException("중복된 숫자가 있어 프로그램을 종료합니다.");
         }
+    }
+
+    public String score(List<Ball> answer) {
+        for (int i = 0; i < answer.size(); i++) {
+            userResult.setScore(answer, this.ballList.get(i), i);
+        }
+        return userResult.getResult();
     }
 }
