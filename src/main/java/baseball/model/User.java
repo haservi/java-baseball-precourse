@@ -8,9 +8,9 @@ import java.util.Set;
 import static baseball.common.ConstRegex.ONE_TO_NINE;
 import static baseball.common.ConstValue.INPUT_LENGTH;
 
-public class UserBallList extends BallList {
+public class User extends BallList {
 
-    public UserBallList(String numbers) {
+    public User(String numbers) {
         addBall(convertToListInteger(numbers));
     }
 
@@ -18,7 +18,7 @@ public class UserBallList extends BallList {
         isValidUserBall(numbers);
 
         Set<Integer> userBall = new LinkedHashSet<>();
-        for (String number: numbers.split("")) {
+        for (String number : numbers.split("")) {
             userBall.add(Integer.parseInt(number));
         }
         isDuplicatedUserBall(userBall);
@@ -30,7 +30,7 @@ public class UserBallList extends BallList {
         if (!input.matches(ONE_TO_NINE)) {
             throw new IllegalArgumentException("입력 값이 올바르지 않습니다.");
         }
-        if(input.length() != INPUT_LENGTH) {
+        if (input.length() != INPUT_LENGTH) {
             throw new IllegalArgumentException("입력한 숫자의 길이가 올바르지 않습니다.");
         }
     }

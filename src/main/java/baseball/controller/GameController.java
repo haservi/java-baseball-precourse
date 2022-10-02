@@ -1,11 +1,10 @@
 package baseball.controller;
 
 import baseball.common.ConstMessage;
-import baseball.model.ComputerBallList;
-import baseball.model.UserBallList;
+import baseball.model.BallList;
+import baseball.model.Computer;
+import baseball.model.User;
 import camp.nextstep.edu.missionutils.Console;
-
-import java.util.Arrays;
 
 import static baseball.common.ConstValue.GAME_START;
 
@@ -27,12 +26,14 @@ public class GameController {
 
     private void start() {
 
-        ComputerBallList computerBallList = new ComputerBallList();
-
+        BallList computerBallList = new Computer();
         boolean isClear = false;
+
         while (!isClear) {
             System.out.print(ConstMessage.INPUT_NUMBER);
-            UserBallList userBallList = new UserBallList(Console.readLine());
+            BallList userBallList = new User(Console.readLine());
+            // TODO: 컴퓨터와 사용자 정답 비교
+
         }
     }
 }

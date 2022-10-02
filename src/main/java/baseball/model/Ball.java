@@ -1,7 +1,5 @@
 package baseball.model;
 
-import baseball.common.ConstValue;
-
 import static baseball.common.ConstValue.MAX_NUMBER;
 import static baseball.common.ConstValue.MIN_NUMBER;
 
