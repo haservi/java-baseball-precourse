@@ -9,14 +9,22 @@ public class UserResult {
 
     public void setScore(List<Ball> computer, Ball user, int index) {
         if (computer.get(index).getNumber() == (user.getNumber())) {
-            strike++;
+            strike();
             return;
         }
-        // TODO: 리팩토링 필요
+
         for (int i = 0; i < computer.size(); i++) {
-            if (computer.get(i).getNumber() == user.getNumber()) {
-                ball++;
-            }
+            ball(computer.get(i).getNumber(), user.getNumber());
+        }
+    }
+
+    private void strike() {
+        this.strike++;
+    }
+
+    private void ball(int answer, int user) {
+        if (answer == user) {
+            this.ball++;
         }
     }
 
